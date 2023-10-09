@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace boekWinkel
 {
-    enum Verschijningsperiode
+    public enum Verschijningsperiode
     {
         Dagelijks,
         Wekelijks,
         Maandelijks
     }
+
     class Tijdschrift : Boek
     {
         public Verschijningsperiode Periode { get; set; }
