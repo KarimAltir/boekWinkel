@@ -6,12 +6,6 @@ using System.Threading.Tasks;
 
 namespace boekWinkel
 {
-    enum Verschijningsperiode
-    {
-        Dagelijks,
-        Wekelijks,
-        Maandelijks
-    }
     public class Bestelling<T>
     {
         private static int volgnummer = 1;
@@ -32,18 +26,20 @@ namespace boekWinkel
 
         public Tuple<string, int, double> Bestel()
         {
-            double totalePrijs = 0;
+            double totalePrijs = 0.0;
 
             if (Item is Boek boek)
             {
                 totalePrijs = boek.Prijs * Aantal;
-                Console.WriteLine("Boek met ISBN " + boek.Isbn + " (" + boek.Naam + ") is besteld. Aantal: " + Aantal + " Totale prijs: " + totalePrijs + "€");
+                Console.WriteLine("Boek met ISBN " + boek.Isbn + " (" + boek.Naam + ") is besteld. Aantal: " + Aantal + " Totale prijs: " + totalePrijs + " EUR");
             }
             else if (Item is Tijdschrift tijdschrift)
             {
                 totalePrijs = tijdschrift.Prijs * Aantal;
-                Console.WriteLine("Tijdschrift met ISBN " + tijdschrift.Isbn + " (" + tijdschrift.Naam + ") is besteld. Aantal: " + Aantal + ", Totale prijs: " + totalePrijs + "€, Verschijningsperiode: " + tijdschrift.Periode + ")");
+                Console.WriteLine("Tijdschrift met ISBN " + tijdschrift.Isbn + " (" + tijdschrift.Naam + ") is besteld. Aantal: " + Aantal + ", Totale prijs: " + totalePrijs + " EUR");
             }
+
+            BoekBestellingBevestigen();
 
             return new Tuple<string, int, double>(Id.ToString(), Aantal, totalePrijs);
         }
