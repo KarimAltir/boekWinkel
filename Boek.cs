@@ -37,12 +37,12 @@ namespace boekWinkel
 
         public override string ToString()
         {
-            return $"ISBN: {Isbn}, Naam: {Naam}, Uitgever: {Uitgever}, Prijs: {Prijs}€";
+            return "ISBN: " + Isbn + " Naam: " + Naam + " Uitgever: " + Uitgever + " Prijs: " + Prijs + "€";
         }
 
         public void Lees()
         {
-            Console.WriteLine($"Je leest het boek '{Naam}'.");
+            Console.WriteLine("Je leest het boek " + Naam + ".");
         }
 
     }
