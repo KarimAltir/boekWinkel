@@ -22,7 +22,7 @@ namespace boekWinkel
                     prijs = value;
                 } else
                 {
-                    Console.WriteLine("Prijs moet tussen 5€ en 50€ zijn.");
+                    Console.WriteLine("De prijs van " + Naam + " moet tussen 5€ en 50€ zijn, de prijs is " + prijs);
                 }
             } 
         }
@@ -32,7 +32,7 @@ namespace boekWinkel
             Isbn = isbn;
             Naam = naam;
             Uitgever = uitgever;
-            Prijs = prijs;
+            this.prijs = prijs;
         }
 
         public override string ToString()
@@ -47,3 +47,4 @@ namespace boekWinkel
 
     }
 }
+    
