@@ -8,7 +8,7 @@ namespace boekWinkel
 {
     public class Boek
     {
-        public int Isbn {  get; set; }
+        public string Isbn {  get; set; }
         public string Naam { get; set; }
         public string Uitgever { get; set; }
         public double prijs;
